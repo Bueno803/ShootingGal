@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class TrackCrosshair : MonoBehaviour
 {
+    GamePlayAudio m_AudioManager;
     public LayerMask targetLayer;
 
     public Score score;
+    public void Awake()
+    {
+        m_AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<GamePlayAudio>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +27,7 @@ public class TrackCrosshair : MonoBehaviour
         transform.position = mousePosition;
 
         if (Input.GetMouseButtonDown(0)) {
+            m_AudioManager.PlaySFX(m_AudioManager.gunshot);
             Shoot();
         }
     }
@@ -31,10 +38,10 @@ public class TrackCrosshair : MonoBehaviour
         Vector2 crosshairPosition = transform.position;
         RaycastHit2D hit = Physics2D.Raycast(crosshairPosition, direction, Mathf.Infinity, targetLayer);
 
-        if (hit.collider != null) 
-        {
-            if (hit.collider.CompareTag("Target")) 
-            {
+
+        if (hit.collider != null) {
+            if (hit.collider.CompareTag("Target")) {
+                m_AudioManager.PlaySFX(m_AudioManager.hit);
                 Destroy(hit.collider.gameObject);
                 score.IncreaseScore(10);
             }
