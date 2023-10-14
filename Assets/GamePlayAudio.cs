@@ -6,9 +6,13 @@ public class GamePlayAudio : MonoBehaviour
 {
     [Header("Audio Source")]
     [SerializeField] AudioSource bgMusicSource;
+    [SerializeField] AudioSource SFXSource;
 
     [Header("Audio Clip")]
     public AudioClip gametrack;
+    public AudioClip gunshot;
+    public AudioClip menuHover;
+    public AudioClip hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +24,10 @@ public class GamePlayAudio : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
     }
 }
