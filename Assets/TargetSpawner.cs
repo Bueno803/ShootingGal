@@ -10,12 +10,18 @@ public class TargetSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnTarget", 0f; spawnInterval);
+        InvokeRepeating("SpawnTarget", 0f, spawnInterval);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void SpawnTarget() {
+        float x = Random.Range(Camera.main.transform.position.x - Camera.main.orthographicSize,
+        Camera.main.transform.position.x + Camera.main.orthographicSize);
+
+        float y = Random.Range(Camera.main.transform.position.y - Camera.main.orthographicSize,
+        Camera.main.transform.position.y + Camera.main.orthographicSize);
+
+        Vector3 spawnPosition = new Vector3(x, y, 1);
+        GameObject newTarget = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
+        Destroy(newTarget, targetLifetime);
     }
 }

@@ -33,6 +33,6 @@ public class TrackCrosshair : MonoBehaviour
                 Destroy(hit.collider.gameObject);
             }
         }
-        Debug.Log("Hit" + hit.collider.gameObject); 
+        // Debug.Log("Hit" + hit.collider.gameObject); 
     }
 }

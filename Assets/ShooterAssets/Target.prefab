@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3985088577489337075}
   - component: {fileID: 7964954700475583108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9200860773637602719}
   - component: {fileID: 6180532764552124847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 8377685495112543791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
